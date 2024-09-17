@@ -32,7 +32,6 @@ const startServer = async () => {
         console.log(`Received request to fetch product with ID: ${req.params.id}`);
       
         try {
-          // Проверка валидности ObjectId
           if (!ObjectId.isValid(req.params.id)) {
             console.log('Invalid ObjectId format');
             return res.status(400).json({ message: 'Invalid product ID format' });
